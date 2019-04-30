@@ -1,0 +1,24 @@
+                   CPU/init      :          0.00 ms;
+                   CPU/iteration :       1344.07 ms;
+                   CPU/iteration :       1337.70 ms;
+                   CPU/iteration :       1389.02 ms;
+                   CPU/finalize  :       1351.17 ms;
+                   CPU/total     :       5431.96 ms;
+        atomic add GPU/init      :        149.95 ms;
+        atomic add GPU/iteration :          7.00 ms;
+        atomic add GPU/iteration :          7.99 ms;
+        atomic add GPU/iteration :          8.00 ms;
+        atomic add GPU/finalize  :          8.00 ms;
+        atomic add GPU/total     :        192.92 ms;
+parallel reduction GPU/init      :         88.94 ms;
+parallel reduction GPU/iteration :         21.89 ms;
+parallel reduction GPU/iteration :         21.99 ms;
+parallel reduction GPU/iteration :         21.98 ms;
+parallel reduction GPU/finalize  :          8.99 ms;
+parallel reduction GPU/total     :        167.80 ms;
+
+# Default parameters: 3 iterations, 32 colors, workgroup size of 32. input1.png. 
+# Note: Intel i5-2500k, GeForce 960; 
+# For some reason the parallel reduction is slower than atomic adding. 
+# Running the init phase by second time is more efficient, probably due to some 
+# internal OpenCL optimization. 
